@@ -14,9 +14,13 @@ struct PersistenceController {
     static let preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+        for index in 0..<5 {
+            let quote = Quote(context: viewContext)
+            quote.id = UUID()
+            quote.text = "Preview quote \(index + 1)"
+            quote.author = "Preview Author"
+            quote.isFavorite = index == 0
+            quote.dateSaved = Date().addingTimeInterval(TimeInterval(-index * 3600))
         }
         do {
             try viewContext.save()
@@ -33,8 +37,12 @@ struct PersistenceController {
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "BrewApps")
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        if let description = container.persistentStoreDescriptions.first {
+            if inMemory {
+                description.url = URL(fileURLWithPath: "/dev/null")
+            } else if let appGroupURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: AppGroup.identifier) {
+                description.url = appGroupURL.appendingPathComponent("BrewApps.sqlite")
+            }
         }
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

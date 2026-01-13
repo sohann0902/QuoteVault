@@ -6,14 +6,84 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B53D87222F16B430003576FC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53D87212F16B430003576FC /* WidgetKit.framework */; };
+		B53D87242F16B430003576FC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B53D87232F16B430003576FC /* SwiftUI.framework */; };
+		B53D87312F16B432003576FC /* BrewAppsWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B53D871F2F16B430003576FC /* BrewAppsWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B53D872F2F16B432003576FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B53D86C72F16AB8C003576FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B53D871E2F16B430003576FC;
+			remoteInfo = BrewAppsWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B53D87322F16B432003576FC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B53D87312F16B432003576FC /* BrewAppsWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		B53D86CF2F16AB8C003576FC /* BrewApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrewApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B53D871F2F16B430003576FC /* BrewAppsWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BrewAppsWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B53D87212F16B430003576FC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B53D87232F16B430003576FC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B53D87352F16B432003576FC /* Exceptions for "BrewAppsWidget" folder in "BrewAppsWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B53D871E2F16B430003576FC /* BrewAppsWidgetExtension */;
+		};
+		B53D87392F16B47E003576FC /* Exceptions for "BrewAppsWidget" folder in "BrewApps" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				BrewAppsWidget.swift,
+			);
+			target = B53D86CE2F16AB8C003576FC /* BrewApps */;
+		};
+		B53D873B2F16B49C003576FC /* Exceptions for "BrewApps" folder in "BrewAppsWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppGroup.swift,
+				BrewApps.xcdatamodeld,
+			);
+			target = B53D871E2F16B430003576FC /* BrewAppsWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B53D86D12F16AB8C003576FC /* BrewApps */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B53D873B2F16B49C003576FC /* Exceptions for "BrewApps" folder in "BrewAppsWidgetExtension" target */,
+			);
 			path = BrewApps;
+			sourceTree = "<group>";
+		};
+		B53D87252F16B430003576FC /* BrewAppsWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B53D87392F16B47E003576FC /* Exceptions for "BrewAppsWidget" folder in "BrewApps" target */,
+				B53D87352F16B432003576FC /* Exceptions for "BrewAppsWidget" folder in "BrewAppsWidgetExtension" target */,
+			);
+			path = BrewAppsWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +96,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B53D871C2F16B430003576FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B53D87242F16B430003576FC /* SwiftUI.framework in Frameworks */,
+				B53D87222F16B430003576FC /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				B53D86D12F16AB8C003576FC /* BrewApps */,
+				B53D87252F16B430003576FC /* BrewAppsWidget */,
+				B53D87202F16B430003576FC /* Frameworks */,
 				B53D86D02F16AB8C003576FC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +122,18 @@
 			isa = PBXGroup;
 			children = (
 				B53D86CF2F16AB8C003576FC /* BrewApps.app */,
+				B53D871F2F16B430003576FC /* BrewAppsWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B53D87202F16B430003576FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B53D87212F16B430003576FC /* WidgetKit.framework */,
+				B53D87232F16B430003576FC /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +146,12 @@
 				B53D86CB2F16AB8C003576FC /* Sources */,
 				B53D86CC2F16AB8C003576FC /* Frameworks */,
 				B53D86CD2F16AB8C003576FC /* Resources */,
+				B53D87322F16B432003576FC /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B53D87302F16B432003576FC /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				B53D86D12F16AB8C003576FC /* BrewApps */,
@@ -69,6 +162,28 @@
 			productName = BrewApps;
 			productReference = B53D86CF2F16AB8C003576FC /* BrewApps.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B53D871E2F16B430003576FC /* BrewAppsWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B53D87362F16B432003576FC /* Build configuration list for PBXNativeTarget "BrewAppsWidgetExtension" */;
+			buildPhases = (
+				B53D871B2F16B430003576FC /* Sources */,
+				B53D871C2F16B430003576FC /* Frameworks */,
+				B53D871D2F16B430003576FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B53D87252F16B430003576FC /* BrewAppsWidget */,
+			);
+			name = BrewAppsWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = BrewAppsWidgetExtension;
+			productReference = B53D871F2F16B430003576FC /* BrewAppsWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +196,9 @@
 				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					B53D86CE2F16AB8C003576FC = {
+						CreatedOnToolsVersion = 26.1;
+					};
+					B53D871E2F16B430003576FC = {
 						CreatedOnToolsVersion = 26.1;
 					};
 				};
@@ -100,12 +218,20 @@
 			projectRoot = "";
 			targets = (
 				B53D86CE2F16AB8C003576FC /* BrewApps */,
+				B53D871E2F16B430003576FC /* BrewAppsWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		B53D86CD2F16AB8C003576FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B53D871D2F16B430003576FC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +248,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B53D871B2F16B430003576FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B53D87302F16B432003576FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B53D871E2F16B430003576FC /* BrewAppsWidgetExtension */;
+			targetProxy = B53D872F2F16B432003576FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B53D86DD2F16AB8E003576FC /* Debug */ = {
@@ -251,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BrewApps/BrewApps.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SLPFH5TEEM;
@@ -283,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BrewApps/BrewApps.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SLPFH5TEEM;
@@ -310,6 +453,68 @@
 			};
 			name = Release;
 		};
+		B53D87332F16B432003576FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = BrewAppsWidget/BrewAppsWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SLPFH5TEEM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrewAppsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BrewAppsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sohan.BrewApps.BrewAppsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B53D87342F16B432003576FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = BrewAppsWidget/BrewAppsWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SLPFH5TEEM;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BrewAppsWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BrewAppsWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sohan.BrewApps.BrewAppsWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -327,6 +532,15 @@
 			buildConfigurations = (
 				B53D86E02F16AB8E003576FC /* Debug */,
 				B53D86E12F16AB8E003576FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B53D87362F16B432003576FC /* Build configuration list for PBXNativeTarget "BrewAppsWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B53D87332F16B432003576FC /* Debug */,
+				B53D87342F16B432003576FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
